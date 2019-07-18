@@ -1,4 +1,4 @@
-package br.estudo.springbootrestpgmnts;
+package br.estudo.pgmnts;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,15 +1,18 @@
 # springboot-rest-pgmnts
 Componente com serviço de recebimento de pagamentos de fila RabbitMQ
 
-* Implementações
-- [ ] Configurar amqp
+* Implementações:
+- [X] Configurar amqp
 - [ ] Configurar H2
 - [ ] Cria data.sql
 - [ ] Configurar JPA / ORM
-- [ ] Leitura da fila
+- [X] Leitura da fila
 - [ ] Calcula saldo para efetuar compra
 - [ ] Persiste a compra recebida
 - [ ] Envia a resposta para fila
+
+
+*Este componente inicializa na porta 8081*
  
 
 # Getting Started
@@ -25,4 +28,3 @@ The following guides illustrate how to use some features concretely:
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-
