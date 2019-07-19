@@ -1,12 +1,13 @@
 # springboot-rest-pgmnts
-Componente com serviço de recebimento de pagamentos de fila RabbitMQ
+Componente com serviço de recebimento de pagamentos de fila RabbitMQ. Menssagens persistidas na fila pelo componente
+ springboot-rest-mrktplc
 
 * Implementações:
 - [X] Configurar amqp
-- [ ] Configurar H2
+- [X] Configurar H2
 - [ ] Cria data.sql
 - [ ] Configurar JPA / ORM
-- [X] Leitura da fila
+- [X] MDB da fila de de recebimento de pagamentos
 - [ ] Calcula saldo para efetuar compra
 - [ ] Persiste a compra recebida
 - [ ] Envia a resposta para fila
