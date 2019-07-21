@@ -12,7 +12,7 @@ public class PagamentoService {
 
     private static final Logger log = LoggerFactory.getLogger(PagamentoService.class);
 
-    @RabbitListener(queues = RabbitCustomConfiguration.FILA_PAGAMENTOS)
+//    @RabbitListener(queues = RabbitCustomConfiguration.FILA_PAGAMENTOS)
     public void recebePagamento(final PagamentoDto pagamento){
         log.info("PagamentoCliente: {}", pagamento.getDocCliente());
         log.info("PagamentoCompra: {}", pagamento.getCdCompra());
