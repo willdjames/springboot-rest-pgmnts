@@ -13,7 +13,7 @@ public class ClienteConta {
     private Integer id;
 
     @Column(name = "con_doc_cliente")
-    private String docCliente;
+    private String documento;
 
     @Column(name = "con_saldo")
     private double saldo;

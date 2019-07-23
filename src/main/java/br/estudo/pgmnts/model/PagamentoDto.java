@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class PagamentoDto implements Serializable {
 
-    private String docCliente;
+	private static final long serialVersionUID = 1L;
+
+	private String docCliente;
 
     private Integer cdCompra;
 
@@ -26,7 +28,7 @@ public class PagamentoDto implements Serializable {
     public String toString() {
         return "PagamentoDto{" +
                 "docCliente:'" + docCliente + '\'' +
-                ", cdCompra" + cdCompra +
+                ", cdCompra:" + cdCompra +
                 ", valor:" + valor +
                 '}';
     }
