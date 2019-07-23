@@ -22,9 +22,20 @@ public class ClienteConta {
     @JoinColumn(name = "con_id")
     private List<Compra> compras = new ArrayList<>();
 
-	
-    public void debitoDoValor(double valorDoDebito) {
-		if(valorDoDebito <= saldo) {saldo = (saldo - valorDoDebito);}
+    @Deprecated
+    public ClienteConta() {}
+
+    public ClienteConta(String docCliente, Integer cdCompra, double valor) {
+		documento = docCliente;
+		compras.add(new Compra(cdCompra, valor));
+	}
+
+	public void debitoDoValor(double valorDoDebito) {
+		if(valorDoDebito <= saldo) {
+			saldo = (saldo - valorDoDebito);
+		}else {
+			throw new RuntimeException("Saldo insuficiente para este debito");
+		}
 	}
 	
 	public double getSaldo() {
@@ -34,6 +45,10 @@ public class ClienteConta {
 	@Override
 	public String toString() {
 		return "ClienteConta{id:" + id + ", documento:" + documento + ", saldo:" + saldo + "}";
+	}
+
+	public void adicionaCompra(Compra novaCompra) {
+		compras.add(novaCompra);
 	}
 	
 	

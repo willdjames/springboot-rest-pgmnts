@@ -2,6 +2,8 @@ package br.estudo.pgmnts.model;
 
 import java.io.Serializable;
 
+import br.estudo.pgmnts.model.orm.Compra;
+
 public class PagamentoDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -32,4 +34,8 @@ public class PagamentoDto implements Serializable {
                 ", valor:" + valor +
                 '}';
     }
+
+	public Compra getCompra() {
+		return new Compra(getCdCompra(), getValor());
+	}
 }

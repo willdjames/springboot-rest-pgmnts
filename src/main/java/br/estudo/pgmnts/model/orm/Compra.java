@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "tb_compra")
 public class Compra {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comp_id")
     private Integer id;
@@ -16,4 +16,12 @@ public class Compra {
 
     @Column(name = "comp_valor")
     private double valor;
+
+    @Deprecated
+    public Compra() {}
+    
+    public Compra(Integer cdCompra, double valorCompra) {
+    	codigo = cdCompra;
+    	valor = valorCompra;
+    }
 }

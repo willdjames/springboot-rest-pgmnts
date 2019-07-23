@@ -1,15 +1,16 @@
 package br.estudo.pgmnts.business;
 
-import br.estudo.pgmnts.configuration.RabbitCustomConfiguration;
-import br.estudo.pgmnts.model.PagamentoDto;
-import br.estudo.pgmnts.model.orm.ClienteConta;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import br.estudo.pgmnts.configuration.RabbitCustomConfiguration;
+import br.estudo.pgmnts.model.PagamentoDto;
+import br.estudo.pgmnts.model.orm.ClienteConta;
+import br.estudo.pgmnts.model.orm.Compra;
 
 @Service
 public class PagamentoService {
@@ -34,9 +35,18 @@ public class PagamentoService {
         	return;
         }
                 
-        cliente.debitoDoValor(solicitacaoDePagamento.getValor());
+        try {
+        	cliente.debitoDoValor(solicitacaoDePagamento.getValor());        	
+        }catch (RuntimeException e) {
+			log.error(e.getMessage());
+			return;
+		}
         
         log.info("Saldo do cliente após débito: {}", cliente.getSaldo());
+        
+        Compra compraEfetuda = solicitacaoDePagamento.getCompra();
+        
+        cliente.adicionaCompra(compraEfetuda);
     }
 
 }
