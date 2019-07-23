@@ -9,7 +9,7 @@ Componente com serviço de recebimento de pagamentos de fila RabbitMQ. Menssagen
 - [X] Configurar JPA / ORM
 - [X] MDB da fila de de recebimento de pagamentos
 - [X] Calcula saldo para efetuar compra
-- [ ] Persistir a compra recebida
+- [ ] Persistir a compra recebida.
 - [ ] Envia a resposta para fila
 
 
