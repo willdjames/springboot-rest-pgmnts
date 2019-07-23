@@ -22,4 +22,20 @@ public class ClienteConta {
     @JoinColumn(name = "con_id")
     private List<Compra> compras = new ArrayList<>();
 
+	
+    public void debitoDoValor(double valorDoDebito) {
+		if(valorDoDebito <= saldo) {saldo = (saldo - valorDoDebito);}
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+
+	@Override
+	public String toString() {
+		return "ClienteConta{id:" + id + ", documento:" + documento + ", saldo:" + saldo + "}";
+	}
+	
+	
+
 }
